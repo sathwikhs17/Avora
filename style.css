@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ebe6e4;
+}
+
+.announcements {
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    padding: 0.5%;
+}
+
+header {
+    width: 100%;
+    padding: 1% 0;
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 10%;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.search-img {
+    height: 35px;
+}
+
+.profile-img {
+    height: 25px;
+    padding-right: 45%;
+}
+
+.logo-img {
+    height: 100px;
+}
+
+.wishlist-img {
+    height: 35px;
+    padding-right: 30%;
+}
+
+.cart-img {
+    height: 35px;
+    padding-right: 25%;
+}
+
+.menu-img {
+    height: 35px;
+    padding-right: 5%;
+    transform: scaleX(-1);
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 20%;
+}
+
+.mainbg {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.mainbg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mainbg_txt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.mainbg_txt h2 {
+    margin-top: 30px;
+    font-size: 5rem;
+}
+
+.mainbg_txt p {
+    margin-top: 10px;
+}
+
+.mainbg_txt button {
+    height: 50px;
+    width: 200px;
+    font-size: large;
+    margin-top: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.footer {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 4% 10%;
+}
+
+.footer_contactus {
+    margin-right: 20px;
+}
+
+.footer_about {
+    margin-left: 30px;
+}
+
+.footer_links {
+    margin-left: 80px;
+}
+
+.footer_social {
+    margin-left: 10px;
+}
+
+.footer_form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.footer_form input,
+.footer_form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.footer_form .submitbtn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer a {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.social_links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.copyright {
+    text-align: center;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      padding: 1% 5%;
+    }
+    
+    nav a {
+      margin: 5px 0;
+    }
+    
+    .mainbg_txt h2 {
+      font-size: 3rem;
+    }
+    
+    .footer {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer_about, .footer_links, .footer_social {
+      margin-left: 0;
+    }
+  }
