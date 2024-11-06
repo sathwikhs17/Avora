@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avora</title>
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="announcements">
-        <p>Free shipping all over India</p>
+        <p>Free delivery all over India</p>
     </div>
 
     <header>
         <div class="header-nav">
             <div class="left">
-                <img src="./Images/profile.svg" class="profile-img" alt="Profile Icon">
+                <img src="./Images/profile.svg" class="profile-img" alt="Profile Icon" id="open-popup">
                 <img src="./Images/search.svg" class="search-img" alt="Search Icon">
             </div>
             <div class="center">
@@ -85,10 +86,30 @@
                 </div>
             </div>
         </div>
-        <hr>
+        
         <div class="copyright">
             &copy; 2024 Avora. All rights reserved.
         </div>
     </footer>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" id="close">&times;</span>
+            <h2 id="form-title">Login</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <div class="error-message" id="email-error"></div>
+                
+                <input type="password" placeholder="Password" required>
+                <div class="error-message" id="password-error"></div>
+                
+                <button type="submit">Submit</button>
+                <div class="success-message" id="form-success"></div>
+                <p>Don't have an account? <a href="#" id="toggle-form">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
