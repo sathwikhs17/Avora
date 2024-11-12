@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Avora</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="announcements">
+        <p>Free delivery all over India</p>
+    </div>
+
+    <header>
+        <div class="header-nav">
+            <div class="left">
+                <img src="./Images/profile.svg" class="profile-img" alt="Profile Icon" id="open-popup">
+                <img src="./Images/search.svg" class="search-img" alt="Search Icon">
+            </div>
+            <div class="center">
+                <img src="./Images/Avora.svg" class="logo-img" alt="Logo">
+            </div>
+            <div class="right">
+                <a href="wishlist.html"><img src="./Images/wishlist.svg" class="wishlist-img" alt="Wishlist Icon"></a>
+                <a href="cart.html" ><img src="./Images/cart.svg" class="cart-img" alt="Cart Icon"></a>
+                <img src="./Images/menu.svg" class="menu-img" alt="Menu Icon">
+            </div>
+        </div>
+        <hr>
+        <nav>
+            <a href="#">Abstracts</a>
+            <a href="#">Illusion</a>
+            <a href="#">Collectibles</a>
+            <a href="#">Posters</a>
+            <a href="#">Hand Paintings</a>
+            <a href="#">Artists</a>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="cart-container">
+            <div class="cart-header">
+                <h1>Shopping Cart</h1>
+            </div>
+
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+
+            <div class="cart-summary" id="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">₹0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="total">₹0</span>
+                </div>
+                <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+            </div>
+
+            <div class="empty-cart" id="empty-cart" style="display: none;">
+                <h2>Your cart is empty</h2>
+                <p>Add some beautiful artworks to your cart</p>
+                <a href="index.html" class="continue-shopping">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer_contactus">
+                <h3>Contact Us</h3>
+                <form class="footer_form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submitbtn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="footer_about">
+                <h3>About Avora</h3>
+                <p>
+                    Connecting artists and art enthusiasts in a vibrant online marketplace.<br>
+                    <a href="#about">More info here</a>
+                </p>
+            </div>
+
+            <div class="footer_links">
+                <h3>Quick Links</h3>
+                <a href="#terms">Terms of Service</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#faq">FAQ</a>
+            </div>
+
+            <div class="footer_social">
+                <h3>Connect With Us</h3>
+                <div class="social_links">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">TW</a>
+                    <a href="#" class="social-icon">IG</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2024 Avora. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="./cart.js"></script>
+</body>
+</html>

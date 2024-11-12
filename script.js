@@ -1,28 +1,62 @@
+// DOM Elements
 const popup = document.getElementById("popup");
+const searchPopup = document.getElementById("search-popup");
+const mobileMenu = document.createElement("div");
+mobileMenu.className = "mobile-menu";
+
+// Open/Close Handlers
 const openPopup = document.getElementById("open-popup");
 const closePopup = document.getElementById("close");
+const openSearch = document.getElementById("open-search");
+const closeSearch = document.getElementById("close-search");
+const openMenu = document.getElementById("open-menu");
 const toggleForm = document.getElementById("toggle-form");
 const formTitle = document.getElementById("form-title");
 const loginForm = document.getElementById("loginForm");
+
 let isLoginMode = true;
 
-popup.style.display = "none";
+// Initialize Mobile Menu
+function initializeMobileMenu() {
+    mobileMenu.innerHTML = `
+        <div class="mobile-menu-header">
+            <h2>Menu</h2>
+            <span class="mobile-menu-close">&times;</span>
+        </div>
+        <nav>
+            <a href="#abstracts">Abstracts</a>
+            <a href="#illusion">Illusion</a>
+            <a href="#collectibles">Collectibles</a>
+            <a href="#posters">Posters</a>
+            <a href="#paintings">Hand Paintings</a>
+            <a href="#artists">Artists</a>
+        </nav>
+    `;
+    document.body.appendChild(mobileMenu);
 
-openPopup.onclick = function() {
-    popup.style.display = "flex";
+    const closeMenu = mobileMenu.querySelector('.mobile-menu-close');
+    closeMenu.onclick = () => mobileMenu.classList.remove('active');
 }
 
-closePopup.onclick = function() {
+// Event Listeners
+openPopup.onclick = () => popup.style.display = "flex";
+closePopup.onclick = () => {
     popup.style.display = "none";
     resetForm();
-}
+};
+
+openSearch.onclick = () => searchPopup.style.display = "flex";
+closeSearch.onclick = () => searchPopup.style.display = "none";
+
+openMenu.onclick = () => mobileMenu.classList.add('active');
 
 toggleForm.onclick = function(event) {
     event.preventDefault();
     isLoginMode = !isLoginMode;
     updateFormMode();
-}
+};
 
+// Form Handling
 function updateFormMode() {
     const toggleText = loginForm.querySelector("p");
     
@@ -50,23 +84,11 @@ function updateFormMode() {
         }
     }
     
-    // Reattach event listener to the new toggle link
     document.getElementById("toggle-form").onclick = function(event) {
         event.preventDefault();
         isLoginMode = !isLoginMode;
         updateFormMode();
-    }
-}
-
-window.onload = function() {
-    popup.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == popup) {
-        popup.style.display = "none";
-        resetForm();
-    }
+    };
 }
 
 function resetForm() {
@@ -104,6 +126,13 @@ function showSuccess(message) {
     }
 }
 
+// Form Validation
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Form Submission
 loginForm.onsubmit = function(event) {
     event.preventDefault();
     clearErrors();
@@ -143,9 +172,54 @@ loginForm.onsubmit = function(event) {
             resetForm();
         }, 1500);
     }, 1000);
+};
+
+// Close popups when clicking outside
+window.onclick = function(event) {
+    if (event.target == popup) {
+        popup.style.display = "none";
+        resetForm();
+    }
+    if (event.target == searchPopup) {
+        searchPopup.style.display = "none";
+    }
+    if (event.target.classList.contains('mobile-menu')) {
+        mobileMenu.classList.remove('active');
+    }
+};
+
+// Initialize
+window.onload = function() {
+    popup.style.display = "none";
+    searchPopup.style.display = "none";
+    initializeMobileMenu();
+    
+    // Add to Cart functionality
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+        button.onclick = function() {
+            const artCard = button.closest('.art-card');
+            const artTitle = artCard.querySelector('h3').textContent;
+            showSuccess(`${artTitle} added to cart`);
+        };
+    });
+};
+
+// Testimonial Slider Auto-scroll
+let scrollPosition = 0;
+const testimonialSlider = document.querySelector('.testimonial-slider');
+
+function autoScroll() {
+    if (testimonialSlider) {
+        scrollPosition += testimonialSlider.children[0].offsetWidth + 32; // 32px is the gap
+        if (scrollPosition >= testimonialSlider.scrollWidth) {
+            scrollPosition = 0;
+        }
+        testimonialSlider.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+        });
+    }
 }
 
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
+setInterval(autoScroll, 5000);
