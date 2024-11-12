@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Avora - Premium Art Marketplace for Collectors and Artists">
+    <title>Avora | Premium Art Marketplace</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Global Announcement Banner -->
+    <div class="announcement-banner" role="alert">
+        <p>Free worldwide shipping on orders above ₹25,000</p>
+    </div>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <button class="icon-btn" id="open-search" aria-label="Search">
+                    <img src="assets/icons/search.svg" alt="Search">
+                </button>
+                <button class="icon-btn" id="open-account" aria-label="Account">
+                    <img src="assets/icons/profile.svg" alt="Account">
+                </button>
+            </div>
+
+            <div class="header-center">
+                <a href="/" class="logo">
+                    <img src="assets/logo.svg" alt="Avora" width="120" height="40">
+                </a>
+            </div>
+
+            <div class="header-right">
+                <a href="/wishlist" class="icon-btn" aria-label="Wishlist">
+                    <img src="assets/icons/wishlist.svg" alt="Wishlist">
+                </a>
+                <a href="/cart" class="icon-btn" aria-label="Cart">
+                    <img src="assets/icons/cart.svg" alt="Cart">
+                </a>
+                <button class="icon-btn mobile-menu-trigger" id="open-menu" aria-label="Menu">
+                    <img src="assets/icons/menu.svg" alt="Menu">
+                </button>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/category/abstract">Abstract</a></li>
+                <li><a href="/category/contemporary">Contemporary</a></li>
+                <li><a href="/category/traditional">Traditional</a></li>
+                <li><a href="/category/digital">Digital Art</a></li>
+                <li><a href="/category/photography">Photography</a></li>
+                <li><a href="/artists">Artists</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-label">Featured Collection</span>
+                <h1>Modern Abstracts</h1>
+                <p>Discover our latest curated collection of contemporary abstract art</p>
+                <a href="/collections/modern-abstracts" class="btn btn-primary">Explore Collection</a>
+            </div>
+            <img src="assets/hero-bg.jpg" alt="Modern Abstract Art Collection" class="hero-image">
+        </section>
+
+        <!-- Featured Artworks -->
+        <section class="featured-artworks container">
+            <header class="section-header">
+                <h2>Featured Artworks</h2>
+                <p>Handpicked pieces from renowned artists</p>
+            </header>
+            
+            <div class="artwork-grid">
+                <!-- Artwork cards will be dynamically populated -->
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories container">
+            <header class="section-header">
+                <h2>Browse Categories</h2>
+                <p>Explore our diverse collection of art styles</p>
+            </header>
+
+            <div class="category-grid">
+                <!-- Category cards will be dynamically populated -->
+            </div>
+        </section>
+
+        <!-- Featured Artists -->
+        <section class="featured-artists container">
+            <header class="section-header">
+                <h2>Featured Artists</h2>
+                <p>Meet the creative minds behind our collections</p>
+            </header>
+
+            <div class="artist-grid">
+                <!-- Artist cards will be dynamically populated -->
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <header class="section-header">
+                    <h2>Collector Stories</h2>
+                    <p>Hear from our community of art enthusiasts</p>
+                </header>
+
+                <div class="testimonial-slider" id="testimonialSlider">
+                    <!-- Testimonials will be dynamically populated -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content container">
+            <div class="footer-section">
+                <h3>About Avora</h3>
+                <p>Connecting artists and collectors in a curated marketplace for exceptional artworks.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                    <a href="#" aria-label="Pinterest">PT</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/shipping">Shipping</a></li>
+                    <li><a href="/returns">Returns</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Stay updated with new collections and artistic insights.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Avora. All rights reserved.</p>
+                <ul class="footer-legal">
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Search Modal -->
+    <div class="modal" id="searchModal" role="dialog" aria-labelledby="searchModalTitle">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="searchModalTitle">Search Artworks</h2>
+                <button class="modal-close" aria-label="Close search">×</button>
+            </header>
+            <div class="modal-body">
+                <form class="search-form">
+                    <input type="search" placeholder="Search for artworks, artists..." aria-label="Search">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+                <div class="trending-searches">
+                    <h3>Trending</h3>
+                    <div class="search-tags">
+                        <!-- Tags will be dynamically populated -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Modal -->
+    <div class="modal" id="accountModal" role="dialog" aria-labelledby="accountModalTitle">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="accountModalTitle">Account</h2>
+                <button class="modal-close" aria-label="Close account modal">×</button>
+            </header>
+            <div class="modal-body">
+                <form id="accountForm" class="account-form">
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" placeholder="Password" required>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                    <p class="form-footer">
+                        Don't have an account? <a href="#" id="toggleForm">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <!-- Mobile menu content will be dynamically populated -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+/* Base Styles */
+:root {
+    --primary-color: #0D0D0D;
+    --secondary-color: #ebe6e4;
+    --accent-color: #B0A370;
+    --text-color: #2C2C2C;
+    --error-color: #E74C3C;
+    --success-color: #3CB371;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    --container-padding: 0 10%;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  .container {
+    padding: var(--container-padding);
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+  
+  /* Announcement Banner */
+  .announcement-banner {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 0.875rem;
+  }
+  
+  /* Header Styles */
+  .main-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+    box-shadow: var(--shadow);
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+  }
+  
+  .header-left, .header-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: var(--transition);
+  }
+  
+  .icon-btn:hover {
+    opacity: 0.7;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--secondary-color);
+  }
+  
+  .main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  .main-nav a:hover {
+    color: var(--accent-color);
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 10%;
+    color: white;
+  }
+  
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+  }
+  
+  .hero-label {
+    display: inline-block;
+    background: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-color);
+  }
+  
+  /* Grid Layouts */
+  .artwork-grid, .category-grid, .artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  /* Section Headers */
+  .section-header {
+    text-align: center;
+    margin: 4rem 0 2rem;
+  }
+  
+  .section-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Footer */
+  .main-footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4rem 0 0;
+    margin-top: 4rem;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+  }
+  
+  .footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  .footer-section a:hover {
+    color: var(--accent-color);
+  }
+  
+  .footer-bottom {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Form Styles */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    transition: var(--transition);
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+  }
+  
+  .error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none;
+    }
+    
+    .header-container {
+      padding: 1rem;
+    }
+    
+    .hero {
+      height: 60vh;
+    }
+    
+    .container {
+      padding: 0 1rem;
+    }
+  }
+
+  /* Updated Header Styles */
+.main-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+    box-shadow: var(--shadow);
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  
+  /* Logo styling */
+  .logo {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  
+  .logo img {
+    max-height: 40px;
+    width: auto;
+  }
+  
+  /* Navigation adjustments */
+  .main-nav {
+    border-bottom: 1px solid var(--secondary-color);
+    background: white;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2.5rem;
+    padding: 1rem 0;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  
+  .main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    text-transform: capitalize;
+  }
+  
+  .main-nav a:hover {
+    color: var(--accent-color);
+  }
+  
+  /* Hero Section Refinements */
+  .hero {
+    position: relative;
+    height: 80vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    background: var(--primary-color);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 10%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  
+  .hero-label {
+    display: inline-block;
+    background: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+  }
+  
+  /* Header Icons */
+  .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-btn img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    transition: var(--transition);
+  }
+  
+  .icon-btn:hover img {
+    opacity: 1;
+  }
+  
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none;
+    }
+    
+    .header-container {
+      padding: 0.75rem 1rem;
+    }
+    
+    .hero {
+      min-height: 450px;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-content {
+      padding: 0 1.5rem;
+    }
+    
+    .logo img {
+      max-height: 32px;
+    }
+  }
+  
+  /* Fix for development URLs */
+  [href^="127.0.0.1"] {
+    pointer-events: none;
+  }
